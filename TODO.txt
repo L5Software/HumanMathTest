@@ -1,0 +1,12 @@
+Additional features:
+
+* different fonts for operands, operator
+In its initial release, HumanMathTest uses the same font style, size and transformation when adding both operands and the operator to the "question" image.  This makes machine recognition a fairly simple task, which would reduce effectiveness in protecting a form against robots.  Using different font parameters for each character in the query should allow a human to read the question, but would make machine recognition more difficult.  For maximum flexibility, the font controls must be adjustable at run time, and therefore require additional class variables and methods for proper implementation.
+
+* add "noise" parameters
+Similarly to the default font problem, the math question is drawn with simple characters on a plain background.  Again, this makes machine recognition fairly easy.  Adding random dots and/or lines to the image, either on the background or after writing the question text (or both) will make it more difficult for a program to read the image, but should leave it readable by a human if done correctly.  The tolerable level of noise will probably not be the same for all visitors of a site, and should therefore be something that can be changed at run time.  Again, this requires additional controls within the class data and code.
+
+
+Adding these two features to the class will not be a lot of work, but neither is something I have a lot of time to work on right now.  I plan to add them eventually, but I don't have a schedule for when they will be done.  If anyone wants them sooner, please contact me to make arrangements:  sponsorship = earlier implentation.
+
+Fred Koschara, foss (at) L5Software (dot) com
