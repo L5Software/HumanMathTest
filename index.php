@@ -1,6 +1,6 @@
 <?php
 define('remotefilename','/FOSS/PHP/HumanMathTest/index.php');
-define('LAST_MODIFIED','May 23, 2018 @ 2:31 am');
+define('LAST_MODIFIED','September 27, 2018 @ 1:58 pm');
 define('COPYRIGHT_YEARS',(($year=date('Y'))==2018 ? '' : '2018-').$year);
 /*
  *	LICENSE: SPDX short identifier: BSD-3-Clause
@@ -53,6 +53,7 @@ define('COPYRIGHT_YEARS',(($year=date('Y'))==2018 ? '' : '2018-').$year);
 *
 *	Revision History:
 *	   Date		  by		Description
+*	2018/09/27	wfredk	added "Limitations and Scope" section
 *	2018/05/23	wfredk	original development
 *		|						|
 *	2018/05/16	wfredk	original development
@@ -96,7 +97,29 @@ by calling the <span class="code">verify()</span> method to compare their entry
 vs. the session data.  If an error is found, the form submission should be
 rejected.
 </p>
-<p class="trpspace glueDown">Please consider supporting my work:</p>
+
+<h3>Limitations and Scope</h3>
+
+<p>
+One problem with this sort of form protection is that the math problems need
+to be very simple for average users to succeed. Answers are limited to integers
+in the 0-99 range so that users can calculate them. Even without using optical
+character recognition to parse the image and calculate the correct answer, a bot
+attempting numerous trials will succeed with a small but harmful percentage once
+it knows the field requires numeric input and the valid range. This is a start
+but the challenge is to make it harder for bots to defeat while keeping it easy
+enough for humans of almost all capabilities to succeed.
+</p><p>
+Used in isolation, this test is far from adequate protection on a form where
+anything more than minimal security is needed because of the statistically high
+possibility of getting a correct answer from a random selection.
+</p><p>
+This class, as written, is intended to reduce noise submissions on a survey
+form, not to preventing someone from biasing the outcome.
+</p>
+
+<hr class="trpspace" />
+<p class="glueDown">Please consider supporting my work:</p>
 <ul class="glueUp">
 	<li><?php ElnkUrlT('Donations','http://wfredk.com/donate.php') ?> are
 		always welcome</li>
